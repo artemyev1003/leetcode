@@ -1,17 +1,17 @@
-# [27. Remove Element](https://leetcode.com/problems/remove-element/description/?envType=problem-list-v2&envId=two-pointers&favoriteSlug=&difficulty=EASY)
+<h2><a href="https://leetcode.com/problems/remove-element">Remove Element</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given an integer array <code>nums</code> and an integer <code>val</code>, remove all occurrences of <code>val</code> in <code>nums</code> <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a>. The order of the elements may be changed. Then return <em>the number of elements in </em><code>nums</code><em> which are not equal to </em><code>val</code>.</p>
 
-Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">**in-place** </a>. The order of the elements may be changed. Then return the number of elements in `nums` which are not equal to `val`.
+<p>Consider the number of elements in <code>nums</code> which are not equal to <code>val</code> be <code>k</code>, to get accepted, you need to do the following things:</p>
 
-Consider the number of elements in `nums` which are not equal to `val` be `k`, to get accepted, you need to do the following things:
+<ul>
+	<li>Change the array <code>nums</code> such that the first <code>k</code> elements of <code>nums</code> contain the elements which are not equal to <code>val</code>. The remaining elements of <code>nums</code> are not important as well as the size of <code>nums</code>.</li>
+	<li>Return <code>k</code>.</li>
+</ul>
 
-- Change the array `nums` such that the first `k` elements of `nums` contain the elements which are not equal to `val`. The remaining elements of `nums` are not important as well as the size of `nums`.
-- Return `k`.
+<p><strong>Custom Judge:</strong></p>
 
-**Custom Judge:** 
+<p>The judge will test your solution with the following code:</p>
 
-The judge will test your solution with the following code:
-
-```
+<pre>
 int[] nums = [...]; // Input array
 int val = ...; // Value to remove
 int[] expectedNums = [...]; // The expected answer with correct length.
@@ -21,34 +21,38 @@ int k = removeElement(nums, val); // Calls your implementation
 
 assert k == expectedNums.length;
 sort(nums, 0, k); // Sort the first k elements of nums
-for (int i = 0; i < actualLength; i++) {
+for (int i = 0; i &lt; actualLength; i++) {
     assert nums[i] == expectedNums[i];
 }
-```
+</pre>
 
-If all assertions pass, then your solution will be **accepted** .
+<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
 
-**Example 1:** 
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
 
-```
-Input: nums = [3,2,2,3], val = 3
-Output: 2, nums = [2,2,_,_]
-Explanation: Your function should return k = 2, with the first two elements of nums being 2.
+<pre>
+<strong>Input:</strong> nums = [3,2,2,3], val = 3
+<strong>Output:</strong> 2, nums = [2,2,_,_]
+<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 2.
 It does not matter what you leave beyond the returned k (hence they are underscores).
-```
+</pre>
 
-**Example 2:** 
+<p><strong class="example">Example 2:</strong></p>
 
-```
-Input: nums = [0,1,2,2,3,0,4,2], val = 2
-Output: 5, nums = [0,1,4,0,3,_,_,_]
-Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
+<pre>
+<strong>Input:</strong> nums = [0,1,2,2,3,0,4,2], val = 2
+<strong>Output:</strong> 5, nums = [0,1,4,0,3,_,_,_]
+<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
 Note that the five elements can be returned in any order.
 It does not matter what you leave beyond the returned k (hence they are underscores).
-```
+</pre>
 
-**Constraints:** 
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-- `0 <= nums.length <= 100`
-- `0 <= nums[i] <= 50`
-- `0 <= val <= 100`
+<ul>
+	<li><code>0 &lt;= nums.length &lt;= 100</code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
+	<li><code>0 &lt;= val &lt;= 100</code></li>
+</ul>
