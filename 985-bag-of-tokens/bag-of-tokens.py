@@ -9,17 +9,11 @@ class Solution:
                 power -= tokens[l]
                 l += 1
                 ans += 1
-                print("l")
-                print("l = ", l)
-                print("power = ", power)
             else:
                 if (ans > 0) and (tokens[r] >= tokens[l]) and (r != l):
                     power += tokens[r]
                     r -= 1
                     ans -= 1
-                    print("r")
-                    print("r = ", r)
-                    print("power = ", power)
                 else:
                     return ans
         return ans 
